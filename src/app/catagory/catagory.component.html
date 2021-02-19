@@ -1,0 +1,98 @@
+<!-- main app container -->
+
+<div class="register-container">
+
+    <!-- <div class="row">
+        <div class="col-md-6 form-group">
+
+            <div *ngIf="AllowOnlyNum" class="alert alert-danger" role="alert">
+                Please enter only number!
+              </div>
+            <textarea class="form-control" style="height: 150px;" (keyup)="onKeyupEvent($event)">
+
+            </textarea>
+            <div class="alert alert-primary" role="alert">
+                {{showLength}}  found entries.
+            </div>
+          
+        </div>
+    </div> -->
+    <!-- <app-login></app-login> -->
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card m-3 ">
+                <h5 class="card-header">Add Catagory</h5>
+                <div class="card-body">
+                    <form [formGroup]="catagoryForm" (ngSubmit)="onSubmit()">
+                        <div class="form-row">
+                            <!-- <div class="form-group col-5">
+                                <label>Catagory ID</label>
+                                <input type="text" formControlName="catagoryId" class="form-control" 
+                                    [ngClass]="{ 'is-invalid': submitted && f.catagoryId.errors }" />
+                                <div *ngIf="submitted && f.catagoryId.errors" class="invalid-feedback">
+                                    <div *ngIf="f.catagoryId.errors.required">Catagory ID is required</div>
+                                </div>
+                            </div> -->
+                            <div class="form-group col-5">
+                                <label>Catagory Name</label>
+                                <input type="text" formControlName="catagoryName" class="form-control"
+                                    [ngClass]="{ 'is-invalid': submitted && f.catagoryName.errors }" />
+                                <div *ngIf="submitted && f.catagoryName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.catagoryName.errors.required">Catagory Name is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group col-5">
+                                <label>Catagory Description</label>
+                                <input type="text" formControlName="catagoryDesc" class="form-control"
+                                    [ngClass]="{ 'is-invalid': submitted && f.catagoryDesc.errors }" />
+                                <div *ngIf="submitted && f.catagoryDesc.errors" class="invalid-feedback">
+                                    <div *ngIf="f.catagoryDesc.errors.required">Catagory description is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button
+                                class="btn btn-primary mr-1">{{editMode ? 'Update Catagory': 'Add Catagory'}}</button>
+                            <!-- <button class="btn btn-primary mr-1" (click)="onUpdate()">Update</button> -->
+                            <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="m-3 ">
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Cat ID</th>
+                            <th scope="col">Catagory name</th>
+                            <th scope="col">catagory description</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of catagoryList, let i = index">
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{item.catagoryName}}</td>
+                            <td>{{item.catagoryDesc}}</td>
+                            <td><a class="text cursor" (click)="onEditCatagory(i)"><i class="fas fa-edit"></i></a></td>
+                            <td><a *ngIf="!editMode" class="text-danger cursor disabled"
+                                    (click)="onDeleteCatagory(i)"><i class="fas fa-trash-alt"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</div>

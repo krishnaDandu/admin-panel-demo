@@ -1,0 +1,170 @@
+<div class="register-container"> 
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card m-3 ">
+                <h5 class="card-header">Add Product</h5>
+                <div class="card-body">
+                    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label>Catagory Name</label>
+                                <select formControlName="subCatagoryName" class="form-control">
+                                    <option value="Select catagory" selected></option>
+                                    <option *ngFor="let subCat of subCategoryListDropDown" [id]="subCat.id" [ngValue]="subCat">
+                                        {{subCat.subCatagoryName}}
+                                      </option>                                 
+                                </select>                              
+                            </div>
+                        </div>
+                        <hr  class="mt-2 mb-5 hr"/>
+                        <div class="form-row" >
+                            <div class="form-group col-5" hidden>
+                                <label>Product ID</label>
+                                <input type="text" formControlName="productId" class="form-control"  />
+                                
+                            </div>
+                            <div class="form-group col-6">
+                                <label>Product Name</label>
+                                <input type="text" formControlName="productName" class="form-control" 
+                                    [ngClass]="{ 'is-invalid': submitted && f.productName.errors }" />
+                                <div *ngIf="submitted && f.productName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.productName.errors.required">Catagory Name is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group col-6 pl-4">
+                                <label>Product Type</label>
+                                <select class="form-control">
+                                    <option *ngFor="let item of productType">{{item}}</option>
+                                </select>
+                                <!-- <input type="text" formControlName="productType" class="form-control" 
+                                    [ngClass]="{ 'is-invalid': submitted && f.productType.errors }" />
+                                    <div *ngIf="submitted && f.productType.errors" class="invalid-feedback">
+                                        <div *ngIf="f.productType.errors.required">Catagory Name is required</div>
+                                    </div> -->
+                            </div>
+                            <div class="form-group col-12">
+                                <label>Product Description</label>
+
+                                <textarea  formControlName="productDescription" class="form-control" 
+                                [ngClass]="{ 'is-invalid': submitted && f.productDescription.errors }" >
+
+                                </textarea>
+                                <div *ngIf="submitted && f.productDescription.errors" class="invalid-feedback">
+                                    <div *ngIf="f.productDescription.errors.required">Catagory Name is required</div>
+                                </div>
+                                <!-- <input type="text" formControlName="productDescription" class="form-control" 
+                                    [ngClass]="{ 'is-invalid': submitted && f.productDescription.errors }" />
+                                    <div *ngIf="submitted && f.productDescription.errors" class="invalid-feedback">
+                                        <div *ngIf="f.productDescription.errors.required">Catagory Name is required</div>
+                                    </div> -->
+                            </div>
+                            <div class="form-group col-6">
+                                <label>Product Offer</label>
+                                <input type="number" formControlName="productOffer" class="form-control" 
+                                    [ngClass]="{ 'is-invalid': submitted && f.productOffer.errors }" pattern="[0-9]+([\.,][0-9]+)?" />
+                                    <div *ngIf="submitted && f.productOffer.errors" class="invalid-feedback">
+                                        <div *ngIf="f.productOffer.errors.required">Catagory Name is required</div>
+                                    </div>
+                            </div>
+                            <div class="form-group col-6 pl-4">
+                                <label>Product Price</label>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <input type="number" id="productPrice" formControlName="productPrice" class="form-control" 
+                                        [ngClass]="{ 'is-invalid': submitted && f.productPrice.errors }"  (keyup)="fun_AllowOnlyAmountAndDot($event)"/>
+                                        <div *ngIf="submitted && f.productPrice.errors" class="invalid-feedback">
+                                            <div *ngIf="f.productPrice.errors.required">Catagory Name is required</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 pl-0">
+                                        <select class="form-control">
+                                            <option *ngFor="let item of currency">{{item}}</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                               
+                            </div>
+                            <div class="form-group col-6">
+                                <label>Product Selling Price</label>
+                                <input type="number" formControlName="ProductSellingPrice" class="form-control" 
+                                    [ngClass]="{ 'is-invalid': submitted && f.ProductSellingPrice.errors }" />
+                                    <div *ngIf="submitted && f.ProductSellingPrice.errors" class="invalid-feedback">
+                                        <div *ngIf="f.ProductSellingPrice.errors.required">Catagory Name is required</div>
+                                    </div>
+                            </div>
+                            <div class="form-group col-6 pl-4">
+                                <label>Product Volume</label>
+                                <input type="text" formControlName="ProductVolume" class="form-control" 
+                                    [ngClass]="{ 'is-invalid': submitted && f.ProductVolume.errors }" />
+                                    <div *ngIf="submitted && f.ProductVolume.errors" class="invalid-feedback">
+                                        <div *ngIf="f.ProductVolume.errors.required">Catagory Name is required</div>
+                                    </div>
+                            </div>
+                            <div class="form-group col-6">
+                                <label>Product Quantity</label>
+                                <input type="text" formControlName="ProductQuantity" class="form-control" 
+                                    [ngClass]="{ 'is-invalid': submitted && f.ProductQuantity.errors }" />
+                                    <div *ngIf="submitted && f.ProductQuantity.errors" class="invalid-feedback">
+                                        <div *ngIf="f.ProductQuantity.errors.required">Catagory Name is required</div>
+                                    </div>
+                            </div>
+                            <div class="form-group col-6 pl-4">
+                                <label>Product Add To Cart</label>
+                                <input type="text" formControlName="ProductAddToCart" class="form-control" 
+                                    [ngClass]="{ 'is-invalid': submitted && f.ProductAddToCart.errors }" />
+                                    <div *ngIf="submitted && f.ProductAddToCart.errors" class="invalid-feedback">
+                                        <div *ngIf="f.ProductAddToCart.errors.required">Catagory Name is required</div>
+                                    </div>
+                            </div>
+                            <div class="form-group col-5">
+                                <label>Product Delivery Date</label>
+                                <input type="text" formControlName="ProductDeliveryDate" class="form-control" 
+                                    [ngClass]="{ 'is-invalid': submitted && f.ProductDeliveryDate.errors }" />
+                                    <div *ngIf="submitted && f.ProductDeliveryDate.errors" class="invalid-feedback">
+                                        <div *ngIf="f.ProductDeliveryDate.errors.required">Catagory Name is required</div>
+                                    </div>
+                            </div>                          
+                        </div>
+
+                        <div class="text-center">
+                            <button class="btn btn-primary mr-1">Add Product</button>
+                            <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="m-3 ">
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Product name</th>
+                        <th scope="col">Product description</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of showProductList, let i = index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{item.productName}}</td>
+                        <td>{{item.productDescription}}</td>
+                        <td><a  class="text cursor" (click)="onEditCatagory(i)"><i class="fas fa-edit"></i></a></td>
+                        <td><a  class="text-danger cursor disabled" (click)="onDeleteCatagory(i)"><i class="fas fa-trash-alt"></i></a></td>
+                      </tr>
+                    </tbody>
+                  </table>    
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</div>

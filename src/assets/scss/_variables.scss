@@ -1,0 +1,60 @@
+/* stylelint-disable color-no-hex,declaration-colon-space-after */
+
+//###############################################################################
+// DO NOT MODIFY THIS FILE!!!!!
+// These are Sass varaibles to match the values in basscss
+//
+// ** Only add variables needed for Sass and are the same value as in basscss
+//
+// ** If a variable needs to change, rebuild the basscss file in
+//###############################################################################
+
+
+$sm-screen: 55rem !default; // 770px
+$md-screen: 74rem !default; // 1036px
+$lg-screen: 86rem !default; // 1204px
+
+$breakpoint-sm: '(min-width: '+ $sm-screen +'rem)' !default;
+$breakpoint-md: '(min-width: '+ $md-screen +'rem)' !default;
+$breakpoint-lg: '(min-width: '+ $lg-screen +'rem)' !default;
+
+$button-font-weight: normal !default;
+
+//Font Family
+$font-family:    'Roboto', 'Helvetica Neue' !default;
+$monospace-font-family:   'Consolas', 'Anonymous Pro', Menlo, Monaco, Consolas, 'Courier New', monospace !default;
+
+
+$font-family-pgo : 'Pathway Gothic One', sans-serif;
+$font-family-merri : 'Merriweather', serif;
+$font-family-Rale : 'Raleway';
+//size in REM
+$one-rem : 2rem;
+$two-rem : 2rem;
+$three-rem : 3rem;
+$four-rem : 4rem;
+$five-rem : 5rem;
+
+
+//Colours 
+$blue:        #1b7ebb !default;
+$white:       #ffffff !default;
+$gray:        #aaa !default;
+$active-color :      #2d79c5;
+
+$line-height: 1.5 !default;
+$body-font-size: 100% !default;
+$border-radius: 4px !default;
+
+
+//Font Size
+$size-thirteen: 0.8125rem; // 13px
+$size-fourteen: 0.875rem; //14px
+$size-one: 1rem; //16px
+$size-twenty: 20px;
+
+//alert 
+$boxOutline:rgb(165, 200, 168); // success
+$boxColor: rgb(224, 239, 216); // success
+$fontColor:rgb(66, 121, 63); // success 
+$dangerColor: rgb(255, 227, 227); // danger

@@ -1,0 +1,23 @@
+
+
+<div class="container parent-container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>parent Component....</p>
+
+            {{ChildCurrentVal}}
+            <!-- <div class="parent-view-details" *ngIf="ChildCurrentVal">
+                <p> Title :  {{ChildCurrentVal.title}}</p>
+                <p>First Name : {{ChildCurrentVal.firstName}}</p>
+                <p>Last Name :  {{ChildCurrentVal.lastName}}</p>       
+                <p>Email : {{ChildCurrentVal.email}}</p>
+                <p>Password : {{ChildCurrentVal.password}}</p>
+                <p>Confirmed Password : {{ChildCurrentVal.confirmPassword}}</p>
+                <p>Accept Terms & Conditions : <span *ngIf="regView.acceptTerms">Yes </span></p>         
+            </div> -->
+
+            <app-register (outputToParent)="GetOutPutVal($event)"></app-register>
+        </div>
+    </div>
+</div>
+

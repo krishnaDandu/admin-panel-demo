@@ -1,0 +1,144 @@
+//stylelint-disable block-opening-brace-space-before 
+// ******************************************
+// Color classes
+// ******************************************
+
+// Variables
+// --------------------------
+// Google Fonts
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+$font-stack:"Source Sans Pro", Arial;
+$font-headings:"Oswald", Arial;
+$heading-font-weight: 500;
+$font-icomoon: 'icomoon';
+$font-fontawesome: 'fontawesome';
+//Fonts Color
+// $primary-color:rgb(70, 69, 71); // Graphite
+// $graphite-color-dark: rgb(58, 57, 60);
+// $secondary-color: rgb(51, 51, 51);
+// $sharp-blue: rgb(57, 194, 215);
+// $sharp-blue-hover: rgb(21, 124, 140);
+// $third-color: rgb(85, 85, 85);
+// $fourth-color: rgb(255, 255, 255);
+// $fifth-color:rgb(129, 157, 194); // light blue 1
+// $sixth-color:rgb(199, 218, 232); // light blue 2
+// $seventh-color:rgb(50, 99, 169); // light blue 2
+// $lightgray-color: rgb(150, 150, 150); // light gray
+// $loudOrange-color: rgb(235, 110, 31); //loud/dark orange
+// $lightOrange-color: rgb(255, 153, 89); //light orange
+// $mand-color:rgb(255, 11, 11); // mandatory Color
+// $solitude-color: rgb(235, 238, 240); // smokeWhite
+// $darkCeruleanBlue-color: rgb(0, 75, 140); // Dark blue
+// $black-color: rgb(0, 0, 0); // Black
+// $red-color: rgb(255, 0, 0); // Red
+// $persian-red-color: rgb(201, 48, 44); // Persian Red
+// $mexican-red-color: rgb(172, 41, 37); // Mexican Red
+// $apple-green-color: rgb(68, 157, 68); // Apple green
+// $steel-blue-color: rgb(77, 129, 174); // Steel Blue
+// $white-smoke-color: rgb(242, 242, 242); // White Smoke
+// $white-smoke1-color: rgb(245, 245, 245); // White Smoke
+// $light-slate-gray-color: rgb(121, 134, 152); // Light Slate Grey
+// $gainsboro-color: rgb(221, 221, 221); // Light Grey
+// $gainsboro1-color: rgb(225, 225, 225); // Light Grey
+// $light-gray-color: rgb(212, 212, 212); // Light Grey
+// $pattens-color: rgb(216, 220, 222); // Light Grey
+// $pattens1-color: rgb(222, 224, 226); // Light Grey
+// $celeste-color: rgb(204, 204, 204); // Light Grey
+// $storm-dust-color: rgb(102, 102, 102); // Thick Grey
+// $noble-color: rgb(153, 153, 153); // Dark Grey
+// $charcoal-color: rgb(68, 68, 68); // Dark Grey
+// $atlantis-color: rgb(163, 198, 68); // Green
+// $sushi-color: rgb(68, 157, 68); // Dark Green
+// $norun-color: rgb(244, 164, 96); // sandy brown
+// $undefinedstep-color: rgb(179, 77, 77); // sandy brown
+// //Font Size
+// $size-thirteen: 13px;
+// $size-fourteen: 14px;
+// $size-eighteen: 18px;
+// $size-twenty: 20px;
+// //alert 
+// $boxOutline:rgb(165, 200, 168); // success
+// $boxColor: rgb(224, 239, 216); // success
+// $fontColor:rgb(66, 121, 63); // success 
+// $dangerColor: rgb(255, 227, 227); // danger
+
+
+
+
+/*
+ stylelint-disable block-opening-brace-space-before 
+// ******************************************
+// Color classes
+// ******************************************
+.gray-darkest   { color: $gray-darkest; }
+.gray-darkerer  { color: $gray-darkerer; }
+.gray-darker    { color: $gray-darker; }
+.gray-dark      { color: $gray-dark; }
+.gray-light     { color: $gray-light; }
+.gray-lighter   { color: $gray-lighter; }
+.gray-lighterer { color: $gray-lighterer; }
+.gray-lightest  { color: $gray-lightest; }
+.red-light      { color: $red-light; }
+.red-dark       { color: $red-dark; }
+.orange-light   { color: $orange-light; }
+.orange-dark    { color: $orange-dark; }
+.yellow-light   { color: $yellow-light; }
+.yellow-dark    { color: $yellow-dark; }
+.green-light    { color: $green-light; }
+.green-dark     { color: $green-dark; }
+.blue-light     { color: $blue-light; }
+.blue-dark      { color: $blue-dark; }
+.purple-light   { color: $purple-light; }
+.purple-dark    { color: $purple-dark; }
+.silver-light   { color: $silver-light; }
+.silver-dark    { color: $silver-dark; }
+.brown-light    { color: $brown-light; }
+.brown          { color: $brown; }
+.brown-dark     { color: $brown-dark; }
+.pink-light     { color: $pink-light; }
+.pink           { color: $pink; }
+.pink-dark      { color: $pink-dark; }
+.icon-success   { color: $icon-success; }
+.icon-error     { color: $icon-error; }
+.icon-warning   { color: $icon-warning; }
+.icon-info      { color: $icon-info; }
+
+// ******************************************
+//  background colors classes
+// ******************************************
+// other gray backgrounds
+.bg-gray-darkest   { background-color: $gray-darkest; }
+.bg-gray-darkerer  { background-color: $gray-darkerer; }
+.bg-gray-darker    { background-color: $gray-darker; }
+.bg-gray-dark      { background-color: $gray-dark; }
+.bg-gray-light     { background-color: $gray-light; }
+.bg-gray-lighter   { background-color: $gray-lighter; }
+.bg-gray-lighterer { background-color: $gray-lighterer; }
+.bg-gray-lightest  { background-color: $gray-lightest; }
+.bg-red-light      { background-color: $red-light; }
+.bg-red-dark       { background-color: $red-dark; }
+.bg-orange-light   { background-color: $orange-light; }
+.bg-orange-dark    { background-color: $orange-dark; }
+.bg-yellow-light   { background-color: $yellow-light; }
+.bg-yellow-dark    { background-color: $yellow-dark; }
+.bg-green-light    { background-color: $green-light; }
+.bg-green-dark     { background-color: $green-dark; }
+.bg-blue-light     { background-color: $blue-light; }
+.bg-blue-dark      { background-color: $blue-dark; }
+.bg-purple-light   { background-color: $purple-light; }
+.bg-purple-dark    { background-color: $purple-dark; }
+.bg-silver-light   { background-color: $silver-light; }
+.bg-silver-dark    { background-color: $silver-dark; }
+.bg-brown-light    { background-color: $brown-light; }
+.bg-brown          { background-color: $brown; }
+.bg-brown-dark     { background-color: $brown-dark; }
+.bg-pink-light     { background-color: $pink-light; }
+.bg-pink           { background-color: $pink; }
+.bg-pink-dark      { background-color: $pink-dark; }
+
+// transparent background-color
+.bg-transparent {
+  background-color: transparent;
+}
+*/

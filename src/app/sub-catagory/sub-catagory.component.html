@@ -1,0 +1,88 @@
+<!-- main app container -->
+
+<div class="register-container"> 
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card m-3 ">
+                <h5 class="card-header">Add Sub-Catagory</h5>
+                <div class="card-body">
+                    <form [formGroup]="subCatagoryForm" (ngSubmit)="onSubmit()">
+
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label>Catagory Name</label>
+                                <select formControlName="catName" class="form-control" (change)="onProfileChange()">
+                                    <option value="Select catagory" selected></option>
+                                    <option *ngFor="let cat of catagoryListDropdown" [id]="cat.id" [ngValue]="cat">
+                                        {{cat.catagoryName}}
+                                      </option>                                 
+                                </select>                              
+
+                                <!-- <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                                    <div *ngIf="f.title.errors.required">Title is required</div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            
+
+                            <div class="form-group col-5">
+                                <label>Sub-Catagory Name</label>
+                                <input type="text" formControlName="subCatagoryName" class="form-control" 
+                                    [ngClass]="{ 'is-invalid': submitted && f.subCatagoryName.errors }" />
+                                <div *ngIf="submitted && f.subCatagoryName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.subCatagoryName.errors.required">Catagory Name is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group col-5">
+                                <label>Sub-Catagory Description</label>
+                                <input type="text" formControlName="SubCatagoryDesc" class="form-control" 
+                                    [ngClass]="{ 'is-invalid': submitted && f.SubCatagoryDesc.errors }" />
+                                <div *ngIf="submitted && f.SubCatagoryDesc.errors" class="invalid-feedback">
+                                    <div *ngIf="f.SubCatagoryDesc.errors.required">Catagory description is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button class="btn btn-primary mr-1">{{editMode ? 'Update Sub-Catagory': 'Add Sub-Catagory'}}</button>
+                            <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="m-3 ">
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Sub-Catagory name</th>
+                        <th scope="col">Sub-catagory description</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of subCatagoryList, let i = index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{item.subCatagoryName}}</td>
+                        <td>{{item.SubCatagoryDesc}}</td>
+                        <td><a  class="text cursor" (click)="onEditCatagory(i)"><i class="fas fa-edit"></i></a></td>
+                        <td><a  class="text-danger cursor disabled" (click)="onDeleteCatagory(i)"><i class="fas fa-trash-alt"></i></a></td>
+                      </tr>
+                    </tbody>
+                  </table>    
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</div>

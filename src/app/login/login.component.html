@@ -1,0 +1,170 @@
+<div class="container">
+
+<div class="row">
+  <div class="form_bg">
+    <form [formGroup]="SignUpForm"  (ngSubmit)="PostData(SignUpForm)">
+
+      <!-- <div class="form-group" >
+        <input type="text" formControlName="fname" placeholder="First name">  
+          {{SignUpForm.controls['fname'].errors}}
+          <span *ngIf="SignUpForm.controls['fname'].errors" class="error">Please enter F name</span>
+     
+      </div>
+
+      <div class="form-group">
+        <input type="text" formControlName="lname" placeholder="Last name">
+      </div> -->
+
+      <div class="form-group">
+        <input type="text" formControlName="email" placeholder="Email">
+      </div>
+
+      <div class="form-group">
+        <input type="text" formControlName="userpassword" placeholder="Password">
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="Post Data"  >
+      </div>
+
+
+    </form>
+
+    <p>
+      Form Status: {{ SignUpForm.status }}
+    </p>
+
+  </div>
+
+</div>
+
+</div>
+
+
+
+
+<!-- <form action="" [formGroup]="bioSection" (ngSubmit)="callingFunction()"> -->
+  <!-- <form #personalDetail="ngForm">
+   <div class="row justify-content-md-center">
+    <div class="col-6">
+      <div class="form-group row">
+        <label for="fname" class="col-sm-2 col-form-label">Fist Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" value="" name="fname"
+           [(ngModel)]="person.firstName"  #fname  required
+          >
+<br><br>
+
+         <div *ngIf="fname.invalid" class="alert alert-danger">
+          First Name is requried..
+         </div> 
+          {{fname.className}}
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="" class="col-sm-2 col-form-label">Last Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="" placeholder="Last name">
+        </div>
+      </div>
+
+     
+        <div class="d-flex justify-content-center form-group row">
+          <!-- <button type="submit" [disabled]="!bioSection.valid">Submit Application</button>
+          <button type="submit" class="btn btn-primary">Centered button</button>
+        </div>
+
+    </div>
+
+
+   </div>
+    
+  </form>
+ -->
+
+<!-- 
+<form>
+    <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+    <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+    <input type="submit" class="fadeIn fourth" value="Log In">
+  </form> -->
+
+
+  <!-- <div class="example-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Input</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Select</mat-label>
+      <mat-select>
+        <mat-option value="option">Option</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Textarea</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+  </div>
+   -->
+
+
+
+
+<!-- 
+<form [formGroup]="bioSection" (ngSubmit)="callingFunction()">
+    <h3>Bio Details</h3>
+
+
+    <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+
+
+    <input type="text" id="password" class="fadeIn third" name="login" placeholder="password"> -->
+    <!-- <label>
+        First Name:
+        <input type="text" formControlName="firstName">
+    </label> <br>
+
+    <label>
+        Last Name:
+        <input type="text" formControlName="lastName">
+    </label> <br>
+
+    <label>
+        Age:
+        <input type="text" formControlName="age">
+    </label> -->
+<!-- 
+    <div formGroupName="stackDetails">
+        <h3>Stack Details</h3>
+
+        <label>
+            Stack:
+            <input type="text" formControlName="stack">
+        </label> <br>
+
+        <label>
+            Experience:
+            <input type="text" formControlName="experience">
+        </label>
+    </div>
+
+    <div formGroupName="address">
+        <h3>Address</h3>
+
+        <label>
+            Country:
+            <input type="text" formControlName="country">
+        </label> <br>
+
+        <label>
+            City:
+            <input type="text" formControlName="city">
+        </label>
+    </div> -->
+    <!-- {{!bioSection.valid}}
+    <button type="submit" [disabled]="!bioSection.valid">Submit Application</button>
+
+</form> -->
